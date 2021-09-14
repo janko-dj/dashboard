@@ -11,7 +11,8 @@
 
 <script>
 import DashboardWorkspace from './components/DashboardWorkspace.vue';
-  export default {
+
+export default {
   components: { DashboardWorkspace },
     data: () => ({ 
       items: [],

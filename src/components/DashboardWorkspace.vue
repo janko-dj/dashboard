@@ -88,9 +88,16 @@
               </template>
             </v-simple-table>
           </div>
-          <div v-if = "openCanvas == true">
-            <canvas>
-            </canvas>
+          <div v-if = "openImgWithPath == true">
+            <gmap-map
+              :center="center"
+              :zoom="13"
+              map-type-id="satellite"
+              style="width: 100%; height:655px"
+            >
+              <gmap-polyline v-bind:path.sync="path" v-bind:options="{ strokeColor:'#800080'}">
+              </gmap-polyline>
+            </gmap-map>
           </div>
         </v-card>
       </div>
@@ -99,6 +106,7 @@
 </template>
 
 <script>
+
   export default {
     props: {
       items: Array
@@ -109,10 +117,11 @@
       result: '',
       activeSerialNumber: '',
       openTable: true,
-      openCanvas: false
+      openImgWithPath: false,
+      center: {lat: 0, lng: 0},
+      path: []
     }),
     mounted() {
-      console.log(this.items[0])
       document.getElementById(this.items[0]).click();
     },
     methods: {
@@ -123,13 +132,15 @@
         })
         .then(response => {
           if(response.ok){
-              return response.json()
-          } else{
+              return response.json();
+          } else {
               alert("Server returned " + response.status + " : " + response.statusText);
           }
         })
         .then(response => {
           this.result = response;
+          this.center.lat = response.centerLatitude;
+          this.center.lng = response.centerLongitude;
           this.activeSerialNumber = response.serialNumber;
           this.responseOk = true;
           this.openTable=true;
@@ -139,14 +150,27 @@
           console.log(err);
         });
       },
-      loadPath(machineId) {
-        console.log(machineId)
+      async loadPath(machineId) {
+        fetch("http://localhost:8999/datastore/" + machineId + "/coordinates", {
+            "method": "GET"
+          }).then(response => {
+            if(response.ok){
+              return response.json();
+            } else {
+              alert("Server returned " + response.status + " : " + response.statusText);
+            }
+          }).then(response => {
+            this.path = response.gpsCoordinatesList;
+          }).catch(err => {
+            console.log(err);
+          })
+        console.log(machineId);
         this.openTable = false;
-        this.openCanvas = true;
+        this.openImgWithPath = true;
       },
       loadTable() {
         this.openTable = true;
-        this.openCanvas = false;
+        this.openImgWithPath = false;
       }
     }
   }
