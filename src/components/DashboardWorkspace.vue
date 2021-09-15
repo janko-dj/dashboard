@@ -54,35 +54,47 @@
                   </tr>
                   <tr>
                     <td>Minimum Fuel Consumtion</td>
-                    <td>{{ result.minimumFuelConsumption }}</td>
+                    <td>{{ result.minimumFuelConsumption }} l/h</td>
                   </tr>
                   <tr>
                     <td>Average Fuel Consumtion</td>
-                    <td>{{ result.averageFuelConsumption }}</td>
+                    <td>{{ result.averageFuelConsumption }} l/h</td>
                   </tr>
                   <tr>
                     <td>Maxmimum Fuel Consumtion</td>
-                    <td>{{ result.maximumFuelConsumption }}</td>
+                    <td>{{ result.maximumFuelConsumption }} l/h</td>
                   </tr>
                   <tr>
                     <td>Minimum Engine Load</td>
-                    <td>{{ result.minimumEngineLoad }}</td>
+                    <td>{{ result.minimumEngineLoad }} %</td>
                   </tr>
                   <tr>
                     <td>Average Engine Load</td>
-                    <td>{{ result.averageEngineLoad }}</td>
+                    <td>{{ result.averageEngineLoad }} %</td>
                   </tr>
                   <tr>
                     <td>Maxmimum Engine Load</td>
-                    <td>{{ result.maximumEngineLoad }}</td>
+                    <td>{{ result.maximumEngineLoad }} %</td>
+                  </tr>
+                  <tr>
+                    <td>Minimum Engine Speed</td>
+                    <td>{{ result.minimumEngineSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Average Engine Speed</td>
+                    <td>{{ result.averageEngineSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Maxmimum Engine Speed</td>
+                    <td>{{ result.maximumEngineSpeed }} rpm</td>
                   </tr>
                   <tr>
                     <td>Total Working Hours</td>
-                    <td>{{ result.totalWorkingHours }}</td>
+                    <td>{{ result.totalWorkingHours }} h</td>
                   </tr>
                   <tr>
                     <td>Total Working Hours made that day</td>
-                    <td>{{ result.totalWorkingHoursMadeThatDay }}</td>
+                    <td>{{ result.totalWorkingHoursMadeThatDay }} h</td>
                   </tr>
                 </tbody>
               </template>
