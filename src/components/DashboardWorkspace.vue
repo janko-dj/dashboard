@@ -89,6 +89,30 @@
                     <td>{{ result.maximumEngineSpeed }} rpm</td>
                   </tr>
                   <tr>
+                    <td>Minimum Front PTO Speed</td>
+                    <td>{{ result.minimumFrontPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Average Front PTO Speed</td>
+                    <td>{{ result.averageFrontPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Maxmimum Front PTO Speed</td>
+                    <td>{{ result.maximumFrontPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Minimum Rear PTO Speed</td>
+                    <td>{{ result.minimumRearPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Average Rear PTO Speed</td>
+                    <td>{{ result.averageRearPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Maxmimum Rear PTO Speed</td>
+                    <td>{{ result.maximumRearPTOSpeed }} rpm</td>
+                  </tr>
+                  <tr>
                     <td>Total Working Hours</td>
                     <td>{{ result.totalWorkingHours }} h</td>
                   </tr>
